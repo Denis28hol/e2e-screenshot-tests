@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Локальна сторінка</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      color: #2c3e50;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    input, button {
+      display: block;
+      margin: 10px 0;
+      padding: 8px;
+      width: 300px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #successMessage {
+      color: green;
+      display: none;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Локальна сторінка</h1>
+
+  <form id="loginForm">
+    <input type="text" id="username" name="username" placeholder="Ім’я користувача" required>
+    <input type="password" id="password" name="password" placeholder="Пароль" required>
+    <button id="loginButton" type="submit">Увійти</button>
+  </form>
+
+  <div id="successMessage">Вхід успішний!</div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      if (username && password) {
+        document.getElementById('successMessage').style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
